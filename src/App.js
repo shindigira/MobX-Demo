@@ -7,7 +7,6 @@ import { inject, observer } from "mobx-react";
 @inject("store1", "store2")
 @observer
 class App extends Component {
-  clearComplete = () => {};
   createNew = e => {
     if (e.which === 13) {
       this.props.store1.createItem(e.target.value);
