@@ -4,10 +4,18 @@ import "./App.css";
 
 import { inject, observer } from "mobx-react";
 
+@inject("store1", "store2")
+@observer
 class App extends Component {
   clearComplete = () => {};
   createNew = e => {};
+<<<<<<< Updated upstream
   onFilter = e => {};
+=======
+  setFilter = e => {
+    this.props.store1.filter = e.target.value;
+  };
+>>>>>>> Stashed changes
   // list = itemArray => {
   //   return itemArray.map(item => (
   //     <li key={item.id}>
@@ -40,10 +48,14 @@ class App extends Component {
         <input className="new" onKeyPress={this.createNew} />
         <input
           className="filter"
-          value={"this.props.filter"}
-          onChange={this.onFilter}
+          value={this.props.store1.filter}
+          onChange={this.setFilter}
+          placeholder="filter"
         />
-        {}
+        {this.props.store1.filter}
+        <ul>
+          {this.props.store1.list.map(item => <li key={item}>{item}</li>)}
+        </ul>
         {/* <ul>{this.list()}</ul> */}
         <button onClick={this.clearComplete}>Clear Complete</button>
       </div>
