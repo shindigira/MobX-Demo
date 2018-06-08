@@ -50,7 +50,9 @@ class App extends Component {
         />
         {this.props.store1.filter}
         <ul>
-          {this.props.store1.list.map(item => <li key={item}>{item}</li>)}
+          {this.props.store1.filteredList.map(item => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
         {/* <ul>{this.list()}</ul> */}
         <button onClick={this.clearComplete}>Clear Complete</button>
