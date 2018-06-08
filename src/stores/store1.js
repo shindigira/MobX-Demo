@@ -30,7 +30,14 @@ class store1 {
   createItem = item => {
     this.list.push(new Item(item));
   };
-  // clearComplete = () => {};
+  @action
+  toggleComplete = itemID => {
+    const temp = this.list.find(item => item.id === itemID);
+    temp.complete = !temp.complete;
+  };
+  clearComplete = () => {
+    this.list = this.list.filter(item => !item.complete);
+  };
 }
 
 export default new store1();

@@ -16,32 +16,26 @@ class App extends Component {
   // setFilter = e => {
   //   this.props.store1.filter = e.target.value;
   // };
-  // list = itemArray => {
-  //   return itemArray.map(item => (
-  //     <li key={item.id}>
-  //       <input
-  //         type="checkbox"
-  //         onChange={this.toggleComplete(item)}
-  //         value={item.complete}
-  //         checked={item.complete}
-  //       />
-  //       <span>{item.value}</span>
-  //     </li>
-  //   ));
-  // };
-  toggleComplete = item => {};
+  list = itemArray => {
+    return itemArray.map(item => {
+      return (
+        <li key={item.id}>
+          <input
+            type="checkbox"
+            onChange={() => {
+              this.toggleComplete(item);
+            }}
+            checked={item.complete}
+          />
+          <span>{item.value}</span>
+        </li>
+      );
+    });
+  };
+  toggleComplete = item => {
+    this.props.store1.toggleComplete(item.id);
+  };
   render() {
-    //   return (
-    //     <div className="App">
-    //       <header className="App-header">
-    //         <img src={logo} className="App-logo" alt="logo" />
-    //         <h1 className="App-title">Welcome to React</h1>
-    //       </header>
-    //       <p className="App-intro">
-    //         To get started, edit <code>src/App.js</code> and save to reload.
-    //       </p>
-    //     </div>
-    //   );
     return (
       <div>
         <h1>List of things</h1>
@@ -52,14 +46,10 @@ class App extends Component {
           onChange={this.props.store1.setFilter}
           placeholder="filter"
         />
-        {this.props.store1.filter}
-        <ul>
-          {this.props.store1.filteredList.map(item => (
-            <li key={item.id}>{item.value}</li>
-          ))}
-        </ul>
-        {/* <ul>{this.list()}</ul> */}
-        <button onClick={this.clearComplete}>Clear Complete</button>
+        <ul>{this.list(this.props.store1.filteredList)}</ul>
+        <button onClick={this.props.store1.clearComplete}>
+          Clear Complete
+        </button>
       </div>
     );
   }
