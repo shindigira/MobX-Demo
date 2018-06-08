@@ -14,7 +14,6 @@ class App extends Component {
   //       <input
   //         type="checkbox"
   //         onChange={this.toggleComplete(item)}
-  //         value={item.complete}
   //         checked={item.complete}
   //       />
   //       <span>{item.value}</span>
