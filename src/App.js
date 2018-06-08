@@ -11,6 +11,7 @@ class App extends Component {
   createNew = e => {
     if (e.which === 13) {
       this.props.store1.createItem(e.target.value);
+      e.target.value = "";
     }
   };
   // setFilter = e => {
