@@ -9,13 +9,9 @@ import { inject, observer } from "mobx-react";
 class App extends Component {
   clearComplete = () => {};
   createNew = e => {};
-<<<<<<< Updated upstream
-  onFilter = e => {};
-=======
   setFilter = e => {
     this.props.store1.filter = e.target.value;
   };
->>>>>>> Stashed changes
   // list = itemArray => {
   //   return itemArray.map(item => (
   //     <li key={item.id}>
