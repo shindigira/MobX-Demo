@@ -35,7 +35,7 @@ class App extends Component {
     );
     // return (
     //   <div>
-    //     <h1>List of things</h1>
+    //     <h1>List of Things</h1>
     //     <input className="new" onKeyPress={this.createNew} />
     //     <input
     //       className="filter"
