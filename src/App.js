@@ -7,7 +7,7 @@ import { inject, observer } from "mobx-react";
 class App extends Component {
   clearComplete = () => {};
   createNew = e => {};
-  onFilter = e => {};
+  setFilter = e => {};
   // list = itemArray => {
   //   return itemArray.map(item => (
   //     <li key={item.id}>
@@ -41,7 +41,7 @@ class App extends Component {
         <input
           className="filter"
           value={"this.props.filter"}
-          onChange={this.onFilter}
+          onChange={this.setFilter}
         />
         {}
         {/* <ul>{this.list()}</ul> */}
