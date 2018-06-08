@@ -8,10 +8,14 @@ import { inject, observer } from "mobx-react";
 @observer
 class App extends Component {
   clearComplete = () => {};
-  createNew = e => {};
-  setFilter = e => {
-    this.props.store1.filter = e.target.value;
+  createNew = e => {
+    if (e.which === 13) {
+      this.props.store1.createItem(e.target.value);
+    }
   };
+  // setFilter = e => {
+  //   this.props.store1.filter = e.target.value;
+  // };
   // list = itemArray => {
   //   return itemArray.map(item => (
   //     <li key={item.id}>
@@ -45,13 +49,13 @@ class App extends Component {
         <input
           className="filter"
           value={this.props.store1.filter}
-          onChange={this.setFilter}
+          onChange={this.props.store1.setFilter}
           placeholder="filter"
         />
         {this.props.store1.filter}
         <ul>
           {this.props.store1.filteredList.map(item => (
-            <li key={item}>{item}</li>
+            <li key={item.id}>{item.value}</li>
           ))}
         </ul>
         {/* <ul>{this.list()}</ul> */}
