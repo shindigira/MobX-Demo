@@ -23,32 +23,32 @@ class App extends Component {
   // };
   toggleComplete = item => {};
   render() {
-    //   return (
-    //     <div className="App">
-    //       <header className="App-header">
-    //         <img src={logo} className="App-logo" alt="logo" />
-    //         <h1 className="App-title">Welcome to React</h1>
-    //       </header>
-    //       <p className="App-intro">
-    //         To get started, edit <code>src/App.js</code> and save to reload.
-    //       </p>
-    //     </div>
-    //   );
     return (
-      <div>
-        <h1>List of things</h1>
-        <input className="new" onKeyPress={this.createNew} />
-        <input
-          className="filter"
-          value={"this.props.store1.filter"}
-          onChange={this.setFilter}
-          placeholder="filter"
-        />
-        {}
-        {/* <ul>{this.list()}</ul> */}
-        <button onClick={this.clearComplete}>Clear Complete</button>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
     );
+    // return (
+    //   <div>
+    //     <h1>List of things</h1>
+    //     <input className="new" onKeyPress={this.createNew} />
+    //     <input
+    //       className="filter"
+    //       value={"this.props.store1.filter"}
+    //       onChange={this.setFilter}
+    //       placeholder="filter"
+    //     />
+    //     {}
+    //     {/* <ul>{this.list()}</ul> */}
+    //     <button onClick={this.clearComplete}>Clear Complete</button>
+    //   </div>
+    // );
   }
 }
 
