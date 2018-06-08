@@ -40,8 +40,9 @@ class App extends Component {
         <input className="new" onKeyPress={this.createNew} />
         <input
           className="filter"
-          value={"this.props.filter"}
+          value={"this.props.store1.filter"}
           onChange={this.setFilter}
+          placeholder="filter"
         />
         {}
         {/* <ul>{this.list()}</ul> */}
